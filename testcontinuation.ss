@@ -94,7 +94,7 @@
 
 (define seqL
 
-  (λ (new old l)
+  (lambda (new old l)
 
     (cons new (cons old l))))
 
@@ -102,7 +102,7 @@
 
 (define seqR
 
-  (λ (new old l)
+  (lambda (new old l)
 
     (cons old (cons new l))))
 
@@ -110,11 +110,11 @@
 
 (define insert-g1 
 
-  (λ (test?)
+  (lambda (test?)
 
-    (λ (seq)
+    (lambda (seq)
 
-      (λ (new old l)
+      (lambda (new old l)
 
         (cond
 
@@ -136,7 +136,7 @@
 
 (define insertL 
 
-      (λ (new old l)
+      (lambda (new old l)
 
         (cond
 
@@ -280,4 +280,4 @@
 
 
 
-(multirember&co 'tuna '(and  a  c tuna b tuna) (λ (x y) x))
+(multirember&co 'tuna '(and  a  c tuna b tuna) (lambda (x y) x))
