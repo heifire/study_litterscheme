@@ -203,7 +203,6 @@
 (define multirember&co
 
   (lambda ( a lat col)
-
     (cond
 
       ((null? lat)
