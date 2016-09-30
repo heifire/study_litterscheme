@@ -82,4 +82,32 @@
         ((= kinds-of-coins 2) 5)
         ((= kinds-of-coins 3) 10)
         ((= kinds-of-coins 4) 25)
-        ((= kinds-of-coins 5) 50))) 
+        ((= kinds-of-coins 5) 50)))
+;;;练习 1.11
+
+(define (f11 n)
+  (cond ((< n 3) n)
+        (else (+
+               (f11 (- n 1))
+               (* 2 (f11 (- n 2)))
+               (* 3 (f11 (- n 3)))))))
+
+(define (f11i n)
+  (f11-iter 2 1 0 0 n))
+(define (f11-iter a b c i n)
+  (if (= i n)
+      c
+      (f11-iter (+ a (* 2 b) (* 3 c))
+                a
+                b
+                (+ i 1)
+                n)))
+;;;练习 1.12
+
+(define (pascal n m)
+  (if (> n 2)
+   (cond ((= m 1) 1)
+         ((= n m) 1)
+         (else (+ (pascal (- n 1) (- m 1))
+                  (pascal (- n 1) m) )))
+   1))
